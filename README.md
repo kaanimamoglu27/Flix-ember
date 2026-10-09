@@ -1,4 +1,4 @@
-**Oyna:** https://kaanimamoglu27.github.io/Flix-ember/
+**Oyna:** https://kaanimamoglu27.github.io/Flix-ember/ (GitHub Pages)
 
 # FLIX Çember: oyun notu
 
