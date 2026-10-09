@@ -2,10 +2,15 @@
 
 # FLIX Çember: oyun notu
 
-Tek dosyalık tarayıcı prototipi: `flix-cember.html` (3D, sürüm 3). Three.js r128 cdnjs'ten yüklenir, başka bağımlılık yok. İlk 2D sürüm `flix-cember-2d-v1.html` olarak duruyor.
+Tek dosyalık tarayıcı prototipi: `flix-cember.html` (3D, sürüm 4). Sürüm 3 `flix-cember-v3.html` olarak duruyor. Three.js r128 cdnjs'ten yüklenir, başka bağımlılık yok. İlk 2D sürüm `flix-cember-2d-v1.html` olarak duruyor.
 
 ## Fikir
 Jianzi'nin en bilinen oynanış biçimi: arkadaşlar çember olur, tüylü topu yere düşürmeden birbirine paslar. FLIX Çember bunu telefona taşır. Markanın "Kick it. Flick it. Flix it!" sloganı ve dossier'deki "Çember (grup) challenge" formatı doğrudan oyunun kendisi.
+
+## Sürüm 4
+- Tüm animasyonlar %40 daha hızlı (`ANIM_SPEED`), klip giriş/çıkışları daha uzun ve yumuşak harmanlanıyor.
+- Ağır çekim daha kısa ve hafif (0,3 sn, %60 hız).
+- Kamera: daha alçak, yayın tarzı açı (yaklaşık 23°). Topu hafifçe takip ediyor ve hedefe yumuşakça kayıyor.
 
 ## Görünüm (sürüm 3)
 - Toon gölgeli 3D park, karakterlerde çizgi film tarzı kontur, yüksek çözünürlük (cihaz piksel oranı 2,5'e kadar, telefon yetişemezse kendiliğinden düşer), 2048 gölge haritası.
@@ -26,7 +31,7 @@ Jianzi'nin en bilinen oynanış biçimi: arkadaşlar çember olur, tüylü topu 
 - **Hedef**: her pasta kime atacağın belli (üstte isim, oyuncunun üstünde sarı ok, ayağında sarı halka). Ona dokunmalısın, yanlış kişi can götürür. Akrobatik hareketler otomatik hedefe gider. Zorluk artışı %20 daha hızlı.
 
 ## Zorluk
-- Uçuş süresi 1,7 sn'den başlayıp 1,0 sn'ye iner. Zamanlama penceresi ±280 ms'den ±150 ms'ye daralır.
+- Uçuş süresi 1,4 sn'den başlayıp 0,85 sn'ye iner. Zamanlama penceresi ±280 ms'den ±150 ms'ye daralır.
 - Seri 12, 28, 48, 75'te çembere yeni arkadaş katılır (4'ten 8 kişiye). Seri 32'den sonra rüzgâr.
 - Otomatik test (ilk düşüşe kadar seri): ±80 ms hatayla 300+, ±150 ms ile 28-113, ±220 ms ile 3-44.
 
