@@ -1,11 +1,22 @@
-**Oyna:** https://kaanimamoglu27.github.io/Flix-ember/ (GitHub Pages)
+**Oyna:** https://kaanimamoglu27.github.io/flix-kick-up/cember/ (GitHub Pages)
 
 # FLIX Çember: oyun notu
 
-Tek dosyalık tarayıcı prototipi: `flix-cember.html` (3D, sürüm 4). Sürüm 3 `flix-cember-v3.html` olarak duruyor. Three.js r128 cdnjs'ten yüklenir, başka bağımlılık yok. İlk 2D sürüm `flix-cember-2d-v1.html` olarak duruyor.
+Tek dosyalık tarayıcı prototipi: `flix-cember.html` (3D, sürüm 5). Sürüm 4 `flix-cember-v4.html`, sürüm 3 `flix-cember-v3.html` olarak duruyor. Three.js r128 cdnjs'ten yüklenir. Supabase ayarlıysa supabase-js jsdelivr'den yüklenir, değilse başka bağımlılık yok. İlk 2D sürüm `flix-cember-2d-v1.html` olarak duruyor.
 
 ## Fikir
 Jianzi'nin en bilinen oynanış biçimi: arkadaşlar çember olur, tüylü topu yere düşürmeden birbirine paslar. FLIX Çember bunu telefona taşır. Markanın "Kick it. Flick it. Flix it!" sloganı ve dossier'deki "Çember (grup) challenge" formatı doğrudan oyunun kendisi.
+
+## Sürüm 5
+- **Yeni hareketler ve çeşitler**: 25 yeni klip. Paslar (iç taraf, dış taraf, sekme vole, diz, topuk, zıplayarak vole), sektirmeler (ayak üstü, iç/dış taraf, diz, uyluk, arka topuk, kafa, göğüs), hareketler (Dünya Turu, Yan Rövaşata, Ters Kasırga, Zıplayarak Makas, Arka Makas), sevinçler (dans, yumruk, alkış) ve düşüşler. Her kaydırma birkaç çeşitten birini oynatır, çoğu sağ/sol ayak ikizli.
+- **Tek Kişi modu** (FIFA 06 PSP sektirme oyunundan esinli): FLIX'i tek başına havada tut. Topun soluna dokun sağa, altına dokun yükseğe gider. Ayak üstünden kafaya her yer sayılır, yere düşerse biter, 25'ten sonra rüzgâr.
+- **Yeni arayüz**: ana ekranda 4 mod kartı (Serbest, Hedef, Tek Kişi, Online), "Nasıl oynanır?", ayarlar (ses, titreşim, hareketi azalt), duraklatma ve oyun sonu ekranı.
+- **Profil**: ad (16 harfe kadar), karakter ve forma rengi. Eski `fcm4.best.*` rekorları silinmeden profile taşınır.
+- **Liderlik**: mod başına sekmeler. Supabase bağlı değilse sadece bu cihazın skorları görünür.
+- **Online Çember**: 4 harfli oda kodu, ortak seri ve ortak 3 can, 4 kişiden azsa bot. Oda kuran çıkarsa başka oyuncu devralır. Hareketler ve iki vuruşlu hareketler tüm cihazlarda aynı oynar.
+- **Supabase kurulumu**: `SUPABASE_KURULUM.md` ve `supabase.sql`. Dosyanın başındaki `FLIX_CONFIG` içine Project URL ve anon (public) anahtar yazılır. service_role anahtarı asla dosyaya yazılmaz.
+- Testler: online akış 3 sanal cihazla sahte Supabase'e karşı geçti (gerçek Supabase'e bu ortamdan ulaşılamadı). Bot testleri: Serbest ±60 ms hatayla en iyi seri 51, Tek Kişi ±60 ms ile ortalama 31.
+- Bilinen eksikler: skorlar istemciden gönderildiği için hile yapılabilir; iki vuruşlu hareketler 0,4-0,75 sn sürer; gerçek telefonda FPS ölçülmedi.
 
 ## Sürüm 4
 - Tüm animasyonlar %40 daha hızlı (`ANIM_SPEED`), klip giriş/çıkışları daha uzun ve yumuşak harmanlanıyor.
@@ -38,4 +49,4 @@ Jianzi'nin en bilinen oynanış biçimi: arkadaşlar çember olur, tüylü topu 
 ## Detaylar
 - Her arkadaşın bir müzik notası var; paslar bir melodi çalar.
 - Ana menüde çember kendi kendine paslaşır.
-- Rekorlar mod başına localStorage'da (`fcm4.best.free`, `fcm4.best.target`).
+- Rekorlar mod başına localStorage'da (`fcm4.best.free`, `fcm4.best.target`, `fcm4.best.solo`); profil ve skorlar `fcm5.*`.
