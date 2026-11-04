@@ -3,7 +3,7 @@
 Hocanın yerine geç, kararını ver, gerçekte ne olduğunu gör.
 
 - **Oyna (Safari / tarayıcı):** https://kaanimamoglu27.github.io/Flix-Sen-Olsaydin/
-- **Eski sürümler:** [`eski/`](eski/) klasöründe (v2 … v25)
+- **Eski sürümler:** [`eski/`](eski/) klasöründe (v2 … v26)
 - **iOS uygulaması (TestFlight):** [flix-kick-up/direktor/app](https://github.com/kaanimamoglu27/flix-kick-up/tree/main/direktor/app) · yükleme rehberi: [TESTFLIGHT_REHBERI.md](https://github.com/kaanimamoglu27/flix-kick-up/blob/main/TESTFLIGHT_REHBERI.md)
 - **Canlı veri:** `flix-kick-up/tools/direktor-live.mjs`, GitHub Actions ile 20 dakikada bir çalışır (flix-kick-up reposunda `.github/workflows/direktor-live.yml`) ve flix-kick-up `gh-pages` dalındaki `direktor/live.json` dosyasını günceller. "Bu haftanın maçları" bu veriden her hafta kendiliğinden kurulur.
 
