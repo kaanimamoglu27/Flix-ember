@@ -1,52 +1,29 @@
-**Oyna:** https://kaanimamoglu27.github.io/flix-kick-up/cember/ (GitHub Pages)
+# Flix Sen Olsaydın
 
-# FLIX Çember: oyun notu
+Hocanın yerine geç, kararını ver, gerçekte ne olduğunu gör.
 
-Tek dosyalık tarayıcı prototipi: `flix-cember.html` (3D, sürüm 5). Sürüm 4 `flix-cember-v4.html`, sürüm 3 `flix-cember-v3.html` olarak duruyor. Three.js r128 cdnjs'ten yüklenir. Supabase ayarlıysa supabase-js jsdelivr'den yüklenir, değilse başka bağımlılık yok. İlk 2D sürüm `flix-cember-2d-v1.html` olarak duruyor.
+- **Oyna (Safari / tarayıcı):** https://kaanimamoglu27.github.io/Flix-Sen-Olsaydin/
+- **Eski sürümler:** [`eski/`](eski/) klasöründe (v2 … v24)
+- **iOS uygulaması (TestFlight):** [flix-kick-up/direktor/app](https://github.com/kaanimamoglu27/flix-kick-up/tree/main/direktor/app) · yükleme rehberi: [TESTFLIGHT_REHBERI.md](https://github.com/kaanimamoglu27/flix-kick-up/blob/main/TESTFLIGHT_REHBERI.md)
+- **Canlı veri:** `flix-kick-up/tools/direktor-live.mjs`, GitHub Actions ile 20 dakikada bir çalışır (flix-kick-up reposunda `.github/workflows/direktor-live.yml`) ve flix-kick-up `gh-pages` dalındaki `direktor/live.json` dosyasını günceller. "Bu haftanın maçları" bu veriden her hafta kendiliğinden kurulur.
 
-## Fikir
-Jianzi'nin en bilinen oynanış biçimi: arkadaşlar çember olur, tüylü topu yere düşürmeden birbirine paslar. FLIX Çember bunu telefona taşır. Markanın "Kick it. Flick it. Flix it!" sloganı ve dossier'deki "Çember (grup) challenge" formatı doğrudan oyunun kendisi.
+## Nasıl oynanır
+1. **Hemen oyna** ile bu haftanın gerçek Süper Lig maçını aç, hangi takımın hocası olacağını seç.
+2. Üstte maç canlı oynanır. 30, 46, 60, 70 ve 80. dakikalarda oyun durur, altta karar kartları açılır.
+3. Bir kart seç (oyuncu değiştir, hücuma geç, kapan ya da devam) ve **Kararı ver**e bas. Kartın altındaki yüzdeler gol şansını ve gol yeme riskini gösterir.
+4. Takımın karşı karşıya kalınca nişangah çıkar: boş köşedeyken ekrana dokun.
+5. Maç bitince skorun gerçek skorla karşılaştırılır. Gerçek hocadan iyi sonuç alırsan ekstra yıldız ve Flix Coin kazanırsın.
 
-## Sürüm 5
-- **Yeni hareketler ve çeşitler**: 25 yeni klip. Paslar (iç taraf, dış taraf, sekme vole, diz, topuk, zıplayarak vole), sektirmeler (ayak üstü, iç/dış taraf, diz, uyluk, arka topuk, kafa, göğüs), hareketler (Dünya Turu, Yan Rövaşata, Ters Kasırga, Zıplayarak Makas, Arka Makas), sevinçler (dans, yumruk, alkış) ve düşüşler. Her kaydırma birkaç çeşitten birini oynatır, çoğu sağ/sol ayak ikizli.
-- **Tek Kişi modu** (FIFA 06 PSP sektirme oyunundan esinli): FLIX'i tek başına havada tut. Topun soluna dokun sağa, altına dokun yükseğe gider. Ayak üstünden kafaya her yer sayılır, yere düşerse biter, 25'ten sonra rüzgâr.
-- **Yeni arayüz**: ana ekranda 4 mod kartı (Serbest, Hedef, Tek Kişi, Online), "Nasıl oynanır?", ayarlar (ses, titreşim, hareketi azalt), duraklatma ve oyun sonu ekranı.
-- **Profil**: ad (16 harfe kadar), karakter ve forma rengi. Eski `fcm4.best.*` rekorları silinmeden profile taşınır.
-- **Liderlik**: mod başına sekmeler. Supabase bağlı değilse sadece bu cihazın skorları görünür.
-- **Online Çember**: 4 harfli oda kodu, ortak seri ve ortak 3 can, 4 kişiden azsa bot. Oda kuran çıkarsa başka oyuncu devralır. Hareketler ve iki vuruşlu hareketler tüm cihazlarda aynı oynar.
-- **Supabase kurulumu**: `SUPABASE_KURULUM.md` ve `supabase.sql`. Dosyanın başındaki `FLIX_CONFIG` içine Project URL ve anon (public) anahtar yazılır. service_role anahtarı asla dosyaya yazılmaz.
-- Testler: online akış 3 sanal cihazla sahte Supabase'e karşı geçti (gerçek Supabase'e bu ortamdan ulaşılamadı). Bot testleri: Serbest ±60 ms hatayla en iyi seri 51, Tek Kişi ±60 ms ile ortalama 31.
-- Bilinen eksikler: skorlar istemciden gönderildiği için hile yapılabilir; iki vuruşlu hareketler 0,4-0,75 sn sürer; gerçek telefonda FPS ölçülmedi.
+Oyun ilk açılışta bu adımları kısa bir ekranla anlatır, ana ekrandaki **Nasıl oynanır?** ile tekrar açılır.
 
-## Sürüm 4
-- Tüm animasyonlar %40 daha hızlı (`ANIM_SPEED`), klip giriş/çıkışları daha uzun ve yumuşak harmanlanıyor.
-- Ağır çekim daha kısa ve hafif (0,3 sn, %60 hız).
-- Kamera: daha alçak, yayın tarzı açı (yaklaşık 23°). Topu hafifçe takip ediyor ve hedefe yumuşakça kayıyor.
-
-## Görünüm (sürüm 3)
-- Toon gölgeli 3D park, karakterlerde çizgi film tarzı kontur, yüksek çözünürlük (cihaz piksel oranı 2,5'e kadar, telefon yetişemezse kendiliğinden düşer), 2048 gölge haritası.
-- Karakterlerin dizi, dirseği, gövdesi ve başı ayrı eklemli. Animasyonlar anahtar karelerden yumuşak eğrilerle oynatılıyor, aralarında geçişler harmanlanıyor. Göz kırpma, topu gözle takip, hareket sırasında açılan ağız var.
-- FLIX gerçek bir tüylü top gibi uçar: hızlı yükselir, havada süzülerek iner. Akrobatik hareketlerde kısa ağır çekim olur.
-
-## Kontroller ve hareketler
-- **Dokun**: halka kapanınca bir arkadaşa dokun, pas ona gider. Serbest modda boşluğa dokunursan oyun birini seçer.
-- **Yukarı kaydır**: Rövaşata, ters takla atarak vuruş, +40.
-- **Sağa kaydır**: Kasırga, havada 360 dönüş vuruşu, +30.
-- **Sola kaydır**: Makas, havada makas vuruşu, +25.
-- **Aşağı kaydır**: kendine sektir, sırasıyla Diz, Topuk, Omuz.
-- Akrobatik hareketlerin zamanlama penceresi normal pasın %80'i.
-- Klavye: Boşluk pas, 1-8 belirli arkadaşa pas, oklar hareketler.
+## Klasörler
+- `index.html`: oyun (tek dosya, her şey içinde)
+- `eski/`: önceki sürümler
+- `cember/`: bu reponun eski oyunu Flix Çember (https://kaanimamoglu27.github.io/Flix-Sen-Olsaydin/cember/)
+- iOS uygulaması ve canlı veri flix-kick-up reposunda (`direktor/app/`, `direktor/live.json`).
 
 ## Modlar
-- **Serbest**: istediğine pas ver. "Bana!" diyen arkadaşa 3 pas içinde ulaşmak +30.
-- **Hedef**: her pasta kime atacağın belli (üstte isim, oyuncunun üstünde sarı ok, ayağında sarı halka). Ona dokunmalısın, yanlış kişi can götürür. Akrobatik hareketler otomatik hedefe gider. Zorluk artışı %20 daha hızlı.
-
-## Zorluk
-- Uçuş süresi 1,4 sn'den başlayıp 0,85 sn'ye iner. Zamanlama penceresi ±280 ms'den ±150 ms'ye daralır.
-- Seri 12, 28, 48, 75'te çembere yeni arkadaş katılır (4'ten 8 kişiye). Seri 32'den sonra rüzgâr.
-- Otomatik test (ilk düşüşe kadar seri): ±80 ms hatayla 300+, ±150 ms ile 28-113, ±220 ms ile 3-44.
-
-## Detaylar
-- Her arkadaşın bir müzik notası var; paslar bir melodi çalar.
-- Ana menüde çember kendi kendine paslaşır.
-- Rekorlar mod başına localStorage'da (`fcm4.best.free`, `fcm4.best.target`, `fcm4.best.solo`); profil ve skorlar `fcm5.*`.
+- **Kariyer:** 2010-11'den bugüne bir sezon ve takım seç, sadece maçları yönet: kadro, taktik ve maç içi kararlar. Transfer ve kulüp işleri yok.
+- **Gerçek maçlar:** bu haftanın Süper Lig maçları ve efsane maçlar. Gerçek hocanın kararlarıyla kendi kararlarını karşılaştır.
+- **Canlı bülten:** Avrupa ve Türkiye'den maçlar, skor tahmini, biten maçı yönetme.
+- **Online düello:** arkadaşınla aynı maçı yönet.
